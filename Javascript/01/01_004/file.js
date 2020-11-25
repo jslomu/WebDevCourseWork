@@ -1,11 +1,7 @@
-// Setup
-var a;
-a = 7;
-var b;
+// Store value in variable
 
-// Assign value of a to b
-var b = a;
+var a = 7;
 
 window.onload = function() {
-    document.getElementById("output").innerHTML = b;
+    document.getElementById("output").innerHTML = a;
 }
