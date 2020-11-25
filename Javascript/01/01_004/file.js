@@ -1,7 +1,7 @@
-// Declare a variable
+// Store value in variable
 
-var name = "John"
+var a = 7;
 
 window.onload = function() {
-    document.getElementById("output").innerHTML = name;
+    document.getElementById("output").innerHTML = a;
 }
