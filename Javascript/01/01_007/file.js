@@ -1,7 +1,7 @@
-function greetings() {
-    let variable = document.getElementById("userinput").value;
-    console.log(variable);
-    document.getElementById("result").innerHTML = variable;
+function submit() {
+    document.getElementById("a").innerHTML = a;
+    document.getElementById("b").innerHTML = b;
+    document.getElementById("c").innerHTML = c;
 }
 
 // Only change code below this line
