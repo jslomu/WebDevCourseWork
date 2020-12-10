@@ -1,5 +1,5 @@
 function submit() {
-    document.getElementById("result").innerHTML = studlyCapVar + properCamelCase + titleCaseOver;
+    document.getElementById("result").innerHTML = studlyCapVar + " " +  properCamelCase + " " + titleCaseOver;
 }
 
 // Variable declarations
