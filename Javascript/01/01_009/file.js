@@ -1,6 +1,6 @@
 function calculate() {
-    let firstNumber = document.getElementById("firstNumber");
-    let secondNumber = document.getElementById("secondNumber");
+    let firstNumber = parseInt(document.getElementById("firstNumber").value);
+    let secondNumber = parseInt(document.getElementById("secondNumber").value);
     let sum = 0;
     sum = firstNumber + secondNumber;
     document.getElementById("result").innerHTML = sum;
