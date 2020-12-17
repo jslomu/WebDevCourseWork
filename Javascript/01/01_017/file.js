@@ -1,6 +1,6 @@
 function divide() {
-    let firstNumber = parseInt(document.getElementById("firstNumber").value);
-    let secondNumber = parseInt(document.getElementById("secondNumber").value);
+    let firstNumber = parseFloat(document.getElementById("firstNumber").value);
+    let secondNumber = parseFloat(document.getElementById("secondNumber").value);
     let result = firstNumber / secondNumber;
     document.getElementById("result").innerHTML = result;
 }
