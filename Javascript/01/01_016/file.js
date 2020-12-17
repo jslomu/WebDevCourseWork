@@ -1,7 +1,8 @@
 function multiply() {
-    let firstNumber = document.getElementById("firstNumber").value;
-    let secondNumber = document.getElementById("secondNumber").value;
+    let firstNumber = parseFloat(document.getElementById("firstDecimal").value);
+    let secondNumber = parseFloat(document.getElementById("secondDecimal").value);
+    console.log(firstNumber);
+    console.log(secondNumber);
     let result = firstNumber * secondNumber;
-    console.log(result);
     document.getElementById("result").innerHTML = result;
 }
