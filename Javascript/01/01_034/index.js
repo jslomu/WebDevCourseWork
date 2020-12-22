@@ -1,12 +1,8 @@
-window.onload = load()
+window.onload = ()=>{ string = document.getElementById("string").innerHTML }
 
-function load() {
-    string = document.getElementById("string").innerHTML;
-    console.log(string)
-    document.querySelector("input").addEventListener("keydown", function(){
-        let number = parseInt(document.querySelector("input").value);
-        let result = string[number]
-        console.log(result)
-        document.getElementById("result").innerHTML = result
-    });
+function submit() {
+    let number = parseInt(document.querySelector("input").value);
+    let result = string[number]
+    console.log(result)
+    document.getElementById("result").innerHTML = result
 }
