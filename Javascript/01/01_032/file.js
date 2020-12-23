@@ -2,7 +2,7 @@ function firstCharacter() {
     let string = document.getElementById("string").value
     let index = string.length - 1
     let result = string[index];
-    document.getElementById("lastChar").innerHTML = result;
+    document.getElementById("firstChar").innerHTML = result;
 }
 
 
