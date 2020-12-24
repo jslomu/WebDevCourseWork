@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Values to Functions with Arguments</title>
+    <script src="file.js"></script>
+</head>
+<body>
+    <h1>Passing Values to Functions with Arguments</h1>
+    <p>Enter a number in each field and click "Submit".</p>
+    <p><input type="number" id="number1"> <input type="number" id="number2"></p>
+    <p><button onclick="functionWithArgs(parseInt(document.getElementById('number1').value), parseInt(document.getElementById('number2').value))">Submit</button></p>
+    <p>Result:</p>
+    <p id="result"></p>
+</body>
+</html>
