@@ -1,14 +1,9 @@
-function testGreaterThan(val) {
-    if (val > 100) {  // Change this line
-      return "Over 100";
-    }
-  
-    if (val > 10) {  // Change this line
-      return "Over 10";
-    }
-  
-    return "10 or Under";
+// Setup
+function testStrictNotEqual(val) {
+    if (val !== 17) { // Change this line
+        return "Not Equal"; }
+    else{
+        return "Equal"; }  
 }
-  
-
-window.onload = () => document.getElementById("result").innerHTML = testGreaterThan(10)
+    
+window.onload = () => document.getElementById("result").innerHTML = testStrictNotEqual(10)
