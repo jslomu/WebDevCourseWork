@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Updating Object Properties</title>
+    <title>Accessing Object Properties with Variables</title>
     <script src="index.js"></script>
 </head>
 <body>
-    <h1>Updating Object Properties</h1>
-    <p>JavaScript object displayed below.</p>
-    <p>Enter a new name and click Submit to update object.</p>
+    <h1>Accessing Object Properties with Variables</h1>
+    <p>Enter one of the player numbers below to get the player's name.</p>
+    <ul>
+        <li>12: "Namath"</li>
+        <li>16: "Montana"</li>
+        <li>19: "Unitas"</li>
+    </ul>
+    <p><input type="text"> <button onclick="main()">Submit</button></p>
     <br>
-    <p>Name: <input type="text" id="name"> <button onclick="main()">Submit</button></p>
+    <p>Result:</p>
     <p id="result"></p>
 </body>
 </html>

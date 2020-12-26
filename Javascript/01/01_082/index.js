@@ -1,35 +1,11 @@
-var count = 0;
+var myDog = {
+    // Only change code below this line
+    name: "Bobby",
+    legs: 4,
+    tails: 1
+    // Only change code above this line
+};
 
-function cc(card) {
-  // Only change code below this line
-  switch(card) {
-    case "2":
-    case "3":
-    case "4":
-    case "5":
-    case "6":
-        count ++;
-        break;
-    case "10":
-    case "J":
-    case "Q":
-    case "K":
-    case "A":
-        count --;
-        break;
-    default:
-        break;
-  }
-  if (count <= 0) {
-    return count + " Hold";
-  } else {
-    return count + " Bet";
-  }
-  // Only change code above this line
-}
-
-function main() {
-    let input = document.querySelector("input").value;
-    let result = cc(input);
-    document.getElementById("result").innerHTML = result
-}
+var string = "Dog object => name: " + myDog.name + ", legs: " +
+    myDog.legs + ", tails: " + myDog.tails
+window.onload = () => document.getElementById("result").innerHTML = string

@@ -6,6 +6,6 @@ var myDog = {
     // Only change code above this line
 };
 
-var string = "Dog object => name: " + myDog.name + ", legs: " +
-    myDog.legs + ", tails: " + myDog.tails
+var string = "Dog object => name: " + myDog['name'] + ", legs: " +
+    myDog['legs'] + ", tails: " + myDog['tails']
 window.onload = () => document.getElementById("result").innerHTML = string

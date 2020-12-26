@@ -1,22 +1,13 @@
-var myDog = {
-    // Only change code below this line
-    name: "Camper",
-    legs: 4,
-    tails: 1
-    // Only change code above this line
+// Setup
+var testObj = {
+    12: "Namath",
+    16: "Montana",
+    19: "Unitas"
 };
 
-function display(dog) {
-    string = "Dog object => name: " + dog.name + ", legs: "
-    string += dog.legs + ", tails: " + dog.tails
-    document.getElementById("result").innerHTML = string
-}
-
 function main() {
-    myDog.name = document.querySelector("input").value;
-    display(myDog);
-}
-
-window.onload = () => {
-    setTimeout(display(myDog), 1000)
+    // Only change code below this line
+    var playerNumber = parseInt(document.querySelector("input").value);       // Change this line
+    var player = testObj[playerNumber];   // Change this line
+    document.getElementById("result").innerHTML = player
 }

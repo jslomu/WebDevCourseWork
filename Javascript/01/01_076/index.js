@@ -1,26 +1,26 @@
-function caseInSwitch(val) {
+function switchOfStuff(val) {
     var answer = "";
     // Only change code below this line
     switch(val) {
-      case 1:
-        answer = "alpha";
-        break;
-      case 2:
-        answer = "beta";
-        break;
-      case 3:
-        answer = "gamma";
-        break;
-      case 4:
-        answer = "delta";
-        break;
+        case "a":
+            answer = "apple";
+            break;
+        case "b":
+            answer = "bird";
+            break;
+        case "c":
+            answer = "cat";
+            break;
+        default:
+            answer = "stuff";
+            break;
     }
     // Only change code above this line
     return answer;
 }
-  
+
 function main() {
-    let input = parseInt(document.querySelector("input").value);
-    let result = caseInSwitch(input);
+    let input = document.querySelector("input").value;
+    let result = switchOfStuff(input);
     document.getElementById("result").innerHTML = result
 }
