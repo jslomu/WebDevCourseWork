@@ -51,12 +51,6 @@ function lookUpProfile(name, prop){
 
 window.onload = () => {
     console.log(
-        lookUpProfile("Akira", "likes"),
-        lookUpProfile("Kristian", "lastName"),
-        lookUpProfile("Sherlock", "likes"),
-        lookUpProfile("Harry", "likes"),
-        lookUpProfile("Bob", "number"),
-        lookUpProfile("Bob", "potato"),
-        lookUpProfile("Akira", "address")
+        lookUpProfile("Akira", "likes")
     )
 }
