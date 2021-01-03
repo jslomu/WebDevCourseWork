@@ -1,5 +1,5 @@
 function parse() {
     let int = parseInt(document.querySelector("input").value);
-    console.log(typeOf(int));
+    console.log(typeof int);
     document.getElementById("result").innerHTML = int;
 }
