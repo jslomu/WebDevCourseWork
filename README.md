@@ -1,9 +1,9 @@
 # Web Dev Course Work
-###_A progression of Web Development Course Work._
+### Purpose:
 
 The purpose of this repository is to save any work related to Web Development Courses as I continue to learn various languages and platforms.
 
-##Course List
+## Course List
 
 1. [Free Code Camp - _In Progress_] (https://www.freecodecamp.org/)
 2. [JavaScript 30 - _Planned_] (https://javascript30.com/)
