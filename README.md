@@ -6,6 +6,6 @@ The purpose of this repository is to save any work related to Web Development Co
 
 ## Course List
 
-1. Course [Free Code Camp - _In Progress_] (https://www.freecodecamp.org/)
-2. Course [JavaScript 30 - _Planned_] (https://javascript30.com/)
-3. Course [Vue Mastery - _Planned_] (https://www.vuemastery.com/)
+1. [freeCodeCamp] (https://www.freecodecamp.org/) - _In Progress_
+2. [JavaScript30] (https://javascript30.com/) - _Planned_
+3. [VueMastery] (https://www.vuemastery.com/) - _Planned_
