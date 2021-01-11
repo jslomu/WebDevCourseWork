@@ -1,8 +1,12 @@
-# Web Dev Course Work
+# Web Development Course Work
+
+### [LIVE SITE](https://jslomu.github.io/WebDevCourseWork)
 
 ### Purpose:
 
-The purpose of this repository is to save any work related to Web Development Courses as I continue to learn various languages and platforms.
+This repository is a collection of my work from Web Development Courses I am enrolled in.
+
+It started as a method to expand on my knowledge and experience with Git and GitHub whilst learning to code.
 
 ## Course List
 
