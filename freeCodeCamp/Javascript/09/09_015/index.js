@@ -1,18 +1,35 @@
 function smallestCommons(arr) {
-    arr.sort((a, b) => b - a);
+  sortArray(arr);
+  let allNumbers = getAllNumbers(arr);
+  return findCommon(allNumbers);
+}
 
-    let count = 0;
-    let newArray = [];
+function sortArray(arr) {
+  arr.sort((a, b) => a - b )
+}
 
-    for (let i = arr[0]; i < arr[1]; i--) {
-        newArray.push(i);
+function getAllNumbers(arr) {
+  const newArray = [];
+  for (let i = arr[0]; i <= arr[1]; i++ ) {
+    newArray.push(i);
+  }
+  return newArray;
+}
+
+function findCommon(arr) {
+  let count = 0;
+  let divisor = arr[0] * arr[arr.length - 1]
+  let number = divisor;
+  for (count; count < arr.length; count++) {
+    if (number % arr[count] === 0) {
+      continue
     }
-
-    for (let i = arr[0]; count < newArray.length; i++) {
-        if (i % )
+    else {
+      number += divisor;
+      count = 0;
     }
-
-    return arr;
+  }
+  return number
 }
 
 module.exports = smallestCommons
