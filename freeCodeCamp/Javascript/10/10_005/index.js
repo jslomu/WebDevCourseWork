@@ -1,7 +1,10 @@
 function checkCashRegister(price, cash, cid) {
-    var change;
-
-    return change;
+    let changeSum = calculateChange(price, cash);
+    if (typeof(changeSum) !== "number") { return changeSum };
+    if (calculateCidSum(cid) < changeSum) {
+        return { status: "INSUFFICIENT_FUNDS", change: []};
+    }
+    return checkFunds(cid, changeSum);
 }
 
 const reference = {
@@ -20,97 +23,65 @@ function calculateChange(price, cash) {
     return cash > price ? cash - price : "Customer has provided insufficient funds."
 }
 
+
+function calculateCidSum(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i][1];
+    }
+    return sum;
+}
+
+function checkFunds(cid, changeSum) {
+    let changeArray = [];
+    let sortedCid = [];
+    for (let i = 0; i < cid.length; i++) {
+        sortedCid[i] = cid[i].slice();
+    }
+    sortCid(sortedCid);
+    let value, valueName, count, cidValue;
+    changeSum = parseFloat(changeSum);
+    for (let i = 0; i < sortedCid.length; i++) {
+        valueName = sortedCid[i][0];
+        value = reference[valueName];
+        cidValue = sortedCid[i][1];
+        if (changeSum >= value) {
+            count = Math.floor(changeSum / value);
+            if ((count * value) <= cidValue ) {
+                changeSum -= (count * value);
+              	changeSum = changeSum.toFixed(2);
+                changeArray.push([valueName, count * value]);
+                sortedCid[i][1] = cidValue - (count * value);
+            } else if (cidValue > 0) {
+                changeSum -= cidValue;
+              	changeSum = changeSum.toFixed(2);
+                changeArray.push([valueName, cidValue]);
+                sortedCid[i][1] = 0;
+            }
+        }
+    }
+    if (changeSum > 0) {
+        return { 'status': "INSUFFICIENT_FUNDS", 'change': [] };
+    }
+    for (let i = 0; i < sortedCid.length; i++) {
+        if (sortedCid[i][1] > 0) {
+            return { 'status': "OPEN", 'change': changeArray }; 
+        }
+    }
+    return { 'status': "CLOSED", 'change': cid };
+}
+
 function sortCid(cid) {
     const sortBy = ["ONE HUNDRED", "TWENTY", "TEN", "FIVE", "ONE", "QUARTER", "DIME", "NICKEL", "PENNY"]
     return cid.sort((a, b) => sortBy.indexOf(a[0]) - sortBy.indexOf(b[0]));
 }
 
-function itemiseChange(change) {
-    const changeArray = [];
-    let count;
-    if (change >= 100) {
-        count = Math.floor(change / 100);
-        changeArray.push(["ONE HUNDRED", count]);
-        change -= count * 100;
-        change = change.toFixed(2);
-    }
-    if (change >= 20) {
-        count = Math.floor(change / 20);
-        changeArray.push(["TWENTY", count]);
-        change -= count * 20;
-        change = change.toFixed(2);
-    }
-    if (change >= 10) {
-        count = Math.floor(change / 10);
-        changeArray.push(["TEN", count]);
-        change -= count * 10;
-        change = change.toFixed(2);
-    }
-    if (change >= 5) {
-        count = Math.floor(change / 5);
-        changeArray.push(["FIVE", count]);
-        change -= count * 5;
-        change = change.toFixed(2);
-    }
-    if (change >= 1) {
-        count = Math.floor(change / 1);
-        changeArray.push(["ONE", count]);
-        change -= count;
-        change = change.toFixed(2);
-    }
-    if (change >= 0.25) {
-        count = Math.floor(change / 0.25);
-        changeArray.push(["QUARTER", count]);
-        change -= count * 0.25;
-        change = change.toFixed(2);
-    }
-    if (change >= 0.1) {
-        count = Math.floor(change / 0.1);
-        changeArray.push(["DIME", count]);
-        change -= count * 0.1;
-        change = change.toFixed(2);
-    }
-    if (change >= 0.05) {
-        count = Math.floor(change / 0.05);
-        changeArray.push(["NICKEL", count]);
-        change -= count * 0.05;
-        change = change.toFixed(2);
-    }
-    if (change >= 0.01) {
-        count = Math.floor(change / 0.01);
-        changeArray.push(["PENNY", count]);
-        change -= count * 0.01;
-        change = change.toFixed(2);
-    }
-    return changeArray;
-}
-
-function getStatus(cid, change) {
-    if (calculateCidSum(cid) < change) {
-        return "INSUFFICIENT_FUNDS";
-    } else if (calculateCidSum(cid) === change) {
-        return "CLOSED";
-    } else {
-        return "OPEN";
-    }
-}
-
-function calculateCidSum(cid) {
-    let sum = 0;
-    for (let i = 0; i < cid.length; i++) {
-        sum += reference[cid[i][0]] * cid[i][1];
-    }
-    return sum;
-}
-
-
-checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
-
 module.exports = { 
     checkCashRegister,
     calculateChange,
-    sortCid,
-    itemiseChange,
     calculateCidSum,
-    getStatus
+    checkFunds,
+    sortCid
 }
+
+checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
