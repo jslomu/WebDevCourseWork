@@ -43,4 +43,19 @@ body {
     background: black;
     position: absolute;
     top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    transition: all 0.05s;
+    transition-timing-function: ease-in-out;
+}
+
+.second-hand {
+    height: 3px;
+    background: red;
+}
+
+.hour-hand {
+    width: 25%;
+    left: 25%;
+    background: yellow;
 }
