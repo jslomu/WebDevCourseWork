@@ -1,0 +1,29 @@
+html {
+  background-image: url('./background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid lightblue;
+  height: 98vh;
+  width: 98vw;
+}
+
+.key-item {
+  border: 2px solid black;
+  padding: 3vw;
+  color: white;
+  background-color: grey;
+  font-weight: bolder;
+  font-size: 4em;
+}
