@@ -1,7 +1,7 @@
 html {
   background-image: url('./background.jpg');
-  background-repeat: no-repeat;
-  background-size: 100vw;
+  /* background-repeat: no-repeat;
+  background-size: 100vw; */
 }
 
 body {
@@ -26,4 +26,16 @@ body {
   background-color: grey;
   font-weight: bolder;
   font-size: 4em;
+}
+
+@media only screen and (max-width: 780px) {
+  html {
+    background-image: url('./A_Rolling_Stones_crowd_-_1976_-Knebworth_House_B&W.jpg');
+    background-size: 100%;
+  }
+
+  .keys {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 }
