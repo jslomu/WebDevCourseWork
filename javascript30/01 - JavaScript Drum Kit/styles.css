@@ -4,38 +4,45 @@ html {
   background-size: 100vw; */
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.keys {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid lightblue;
-  height: 98vh;
-  width: 98vw;
-}
-
-.key-item {
-  border: 2px solid black;
-  padding: 3vw;
-  color: white;
-  background-color: grey;
-  font-weight: bolder;
-  font-size: 4em;
-}
-
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 800px) and (min-width: 481px) {
   html {
-    background-image: url('./A_Rolling_Stones_crowd_-_1976_-Knebworth_House_B&W.jpg');
-    background-size: 100%;
+    background-image: url('./background.jpg');
   }
-
+  
   .keys {
     display: grid;
     grid-template-columns: auto auto auto;
+    height: 98vh;
   }
+
+  .key-item {
+    border: 2px solid black;
+    color: #ffffff;
+    background-color: #444444;
+    font-size: 4em;
+    margin: 1vh 1vw;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    background-image: url('./A_Rolling_Stones_crowd_-_1976_-Knebworth_House_B&W.jpg');
+    background-size: contain;
+  }
+  
+  .keys {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* border: 1px solid lightblue; */
+    height: 98vh;
+  }
+
+  .key-item {
+    border: 2px solid black;
+    color: #ffffff;
+    background-color: #444444;
+    font-size: 3em;
+    text-align: center;
+    margin: 1vh 1vw;
 }
