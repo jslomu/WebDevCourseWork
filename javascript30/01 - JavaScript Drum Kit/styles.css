@@ -4,6 +4,27 @@ html {
   background-size: 100vw; */
 }
 
+.keys {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 98vh;
+}
+
+.key-item {
+  border: 2px solid black;
+  color: #ffffff;
+  background-color: #444444;
+  font-size: 4em;
+  width: 10vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+.key-item p {
+  font-size: 0.4em;
+}
+
 @media only screen and (max-width: 800px) and (min-width: 481px) {
   html {
     background-image: url('./background.jpg');
@@ -23,6 +44,10 @@ html {
     margin: 1vh 1vw;
   }
 
+  .key-item p {
+    font-size: 0.3em;
+    cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -45,4 +70,9 @@ html {
     font-size: 3em;
     text-align: center;
     margin: 1vh 1vw;
-}
+    cursor: pointer;
+  }
+
+  .key-item p {
+    display: none;
+  }
