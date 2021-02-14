@@ -3,8 +3,13 @@
     color: white;
 }
 
+* {
+    padding: 0;
+    margin: 0
+}
+
 html {
-    height: 98%;
+    height: 99.99vh;
 }
 
 body {
@@ -16,49 +21,45 @@ body {
 
 div {
     height: 100%;
-    width: 20%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+    transition: flex 1s ease-out;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    flex-grow: 1;
+    text-shadow: 2px 2px #333;
+    display: flex;
+    flex-direction: column;
+
 }
 
-div:nth-child(1) {
+#panelOne {
     background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
-    background-size: cover;
 }
 
-div:nth-child(2) {
+#panelTwo {
     background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
-    background-size: cover;
 }
 
-div:nth-child(3) {
+#panelThree {
     background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
-    background-size: cover;
 }
 
-div:nth-child(4) {
+#panelFour{
     background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
-    background-size: cover;
 }
 
-div:nth-child(5) {
+#panelFive {
     background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
-    background-size: cover;
-}
-
-div:nth-child(odd) {
-    background-color: darkblue;
-}
-
-div:nth-child(even) {
-    background-color: purple;
 }
 
 div p:first-child {
-    display: none;
+    font-size: 2.5em;
+    position: absolute;
+    top: -25%;
+    animation:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-iteration-count: 1;
 }
 
 div p:nth-child(2) {
@@ -66,5 +67,9 @@ div p:nth-child(2) {
 }
 
 div p:last-child {
-    display: none;
+    font-size: 2.5em;
+    position: absolute;
+    top: 125%;
+    animation:cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-iteration-count: 1;
 }
